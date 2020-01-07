@@ -97,14 +97,14 @@
 
                         
                         <li>
-                            <a href="/hitchcock717.github.io/tags/">Tags</a>
+                            <a href="/hitchcock717.github.io/archives/">Archives</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/hitchcock717.github.io/archives/">Archives</a>
+                            <a href="/hitchcock717.github.io/tags/">Tags</a>
                         </li>
                         
                     
@@ -232,11 +232,11 @@ H(X) !——&gt; X
 <li>Hash Pointers</li>
 <li>Merkle Tree</li>
 </ol>
-<p><strong>Hash Pointers</strong><br>图示：<img src="/hexo-theme-huxblog/2019/11/22/BitCoin/WechatIMG604.png" title="BitCoin-1"> <a href="https://www.jianshu.com/p/f3570d8e1d27" target="_blank" rel="noopener">摘自简书</a></p>
+<p><strong>Hash Pointers</strong><br>图示：<img src="/hitchcock717.github.io/2019/11/22/BitCoin/WechatIMG604.png" title="BitCoin-1"> <a href="https://www.jianshu.com/p/f3570d8e1d27" target="_blank" rel="noopener">摘自简书</a></p>
 <blockquote>
-<p>Compared with normal pointers, hash pointers can detect tampering by saving extra hash into the structure body.<br>图示：<img src="/hexo-theme-huxblog/2019/11/22/BitCoin/WechatIMG605.png" title="BitCoin-2">  <a href="https://www.jianshu.com/p/f3570d8e1d27" target="_blank" rel="noopener">摘自简书</a><br>According to above pic, there is only a need to remember the last hash if detecting tampering because block chain is a linked list using hash pointers. </p>
+<p>Compared with normal pointers, hash pointers can detect tampering by saving extra hash into the structure body.<br>图示：<img src="/hitchcock717.github.io/2019/11/22/BitCoin/WechatIMG605.png" title="BitCoin-2">  <a href="https://www.jianshu.com/p/f3570d8e1d27" target="_blank" rel="noopener">摘自简书</a><br>According to above pic, there is only a need to remember the last hash if detecting tampering because block chain is a linked list using hash pointers. </p>
 </blockquote>
-<p><strong>Merkle Tree</strong><br>图示：<img src="/hexo-theme-huxblog/2019/11/22/BitCoin/WechatIMG606.png" title="BitCoin-3">  <a href="https://www.jianshu.com/p/f3570d8e1d27" target="_blank" rel="noopener">摘自简书</a></p>
+<p><strong>Merkle Tree</strong><br>图示：<img src="/hitchcock717.github.io/2019/11/22/BitCoin/WechatIMG606.png" title="BitCoin-3">  <a href="https://www.jianshu.com/p/f3570d8e1d27" target="_blank" rel="noopener">摘自简书</a></p>
 <blockquote>
 <p>First Tier(root node): Root Hash saved; Hash(root hash) = Hash(concat[hash(child node1)+hash(child node2)])<br>  Second/Third Tier: Hash Pointers; Save the hashes of data blocks in the bottom node<br>  Bottom Tier(omitted): called ‘tx’ ——&gt; transaction </p>
 </blockquote>
@@ -245,7 +245,7 @@ H(X) !——&gt; X
 </blockquote>
 <p>Node: Any computing machine in the block chain network, e.g. cellphone, mining machine, server…<br>Full Node: block header &amp; block body saved<br>Light Node(like wxapplet): block header saved only</p>
 <p>Question: How to prove any transaction logged into the block chain in terms of light nodes?</p>
-<p>Solution: The Merkle Tree can provide Merkle Proof.<br>图示：<img src="/hexo-theme-huxblog/2019/11/22/BitCoin/WechatIMG607.png" title="BitCoin-4">  <a href="https://www.bilibili.com/video/av37065233?p=3" target="_blank" rel="noopener">截取自课程视频</a><br>Proof of Membership: theta(log(n)) complexity if proposing Num(n) tx in the entire tree.<br>Proof of Non-Membership: theta(n)</p>
+<p>Solution: The Merkle Tree can provide Merkle Proof.<br>图示：<img src="/hitchcock717.github.io/2019/11/22/BitCoin/WechatIMG607.png" title="BitCoin-4">  <a href="https://www.bilibili.com/video/av37065233?p=3" target="_blank" rel="noopener">截取自课程视频</a><br>Proof of Membership: theta(log(n)) complexity if proposing Num(n) tx in the entire tree.<br>Proof of Non-Membership: theta(n)</p>
 <h2 id="BitCoin-——-Concensus-Protocol"><a href="#BitCoin-——-Concensus-Protocol" class="headerlink" title="BitCoin —— Concensus Protocol"></a>BitCoin —— Concensus Protocol</h2><p>Question: How does Central Bank issue digital currency?</p>
 <p>Solution One: Spending = Duplication; may cause ‘double spending’<br>Solution Two: Create a list of recording each note’s owner, e.g.</p>
 <blockquote>
@@ -296,7 +296,7 @@ H(X) !——&gt; X
 <li>The safety of the entire network decreases. No longer need 51 per cent computing power to make attacks.</li>
 <li>Some miners with limited computing power find selfish mining a preferable strategy. </li>
 </ol>
-<h3 id="UTXO"><a href="#UTXO" class="headerlink" title="UTXO"></a>UTXO</h3><h4 id="Unspent-Transaction-Output"><a href="#Unspent-Transaction-Output" class="headerlink" title="Unspent Transaction Output"></a>Unspent Transaction Output</h4><img src="/hexo-theme-huxblog/2019/11/22/BitCoin/UTXO.png" title="UTXO">
+<h3 id="UTXO"><a href="#UTXO" class="headerlink" title="UTXO"></a>UTXO</h3><h4 id="Unspent-Transaction-Output"><a href="#Unspent-Transaction-Output" class="headerlink" title="Unspent Transaction Output"></a>Unspent Transaction Output</h4><img src="/hitchcock717.github.io/2019/11/22/BitCoin/UTXO.png" title="UTXO">
 <p><a href="https://www.zhihu.com/question/59913301" target="_blank" rel="noopener">参考知乎</a></p>
 <h2 id="BitCoin-Network"><a href="#BitCoin-Network" class="headerlink" title="BitCoin Network"></a>BitCoin Network</h2><p>Desiging principle: Simple, robust but no efficient</p>
 <blockquote>
@@ -327,9 +327,9 @@ H(X) !——&gt; X
 </li>
 </ol>
 </blockquote>
-<h2 id="BitCoin-Script"><a href="#BitCoin-Script" class="headerlink" title="BitCoin Script"></a>BitCoin Script</h2><p><a href="https://zhuanlan.zhihu.com/p/25461051" target="_blank" rel="noopener">参考自知乎巴比特</a><br>输入交易见图示：<img src="/hexo-theme-huxblog/2019/11/22/BitCoin/WechatIMG608.png" title="BitCoin-5"><br>输出交易见图示：<img src="/hexo-theme-huxblog/2019/11/22/BitCoin/WechatIMG609.png" title="BitCoin-6"> </p>
+<h2 id="BitCoin-Script"><a href="#BitCoin-Script" class="headerlink" title="BitCoin Script"></a>BitCoin Script</h2><p><a href="https://zhuanlan.zhihu.com/p/25461051" target="_blank" rel="noopener">参考自知乎巴比特</a><br>输入交易见图示：<img src="/hitchcock717.github.io/2019/11/22/BitCoin/WechatIMG608.png" title="BitCoin-5"><br>输出交易见图示：<img src="/hitchcock717.github.io/2019/11/22/BitCoin/WechatIMG609.png" title="BitCoin-6"> </p>
 <h3 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h3><p>Core: Last in First Out<br>In the ouput content, OP_DUP means duplicating the top element in the stack; OP_EQUALVERIFY means verifying whether two elements in the top of stack are equal.</p>
-<h3 id="Transaction"><a href="#Transaction" class="headerlink" title="Transaction"></a>Transaction</h3><img src="/hexo-theme-huxblog/2019/11/22/BitCoin/WechatIMG610.png" title="BitCoin-7"> 
+<h3 id="Transaction"><a href="#Transaction" class="headerlink" title="Transaction"></a>Transaction</h3><img src="/hitchcock717.github.io/2019/11/22/BitCoin/WechatIMG610.png" title="BitCoin-7"> 
 <h3 id="Standard-transaction-script"><a href="#Standard-transaction-script" class="headerlink" title="Standard transaction script"></a>Standard transaction script</h3><p>P2PKH, Pay to Public Key Hash<br>When Alice wants to transfer fees to Bob, input script shows Bob’s address (equals pub-key hash);<br>When Bob wants to transfer fees to Carol, output script shows Bob’s pub-key and signiture signed by Bob’s private-key because Bob wants to prove he owns his private-key of this address.</p>
 <p>Therefore, output script shows the recipient’s pub-key hash; input script shows his sig &amp; pub-key.</p>
 <p>How to run input/output script?</p>
