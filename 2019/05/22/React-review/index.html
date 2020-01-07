@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A pursuit of sundogs">
+    <meta name="keyword" content="psychiatrist">
+    <link rel="shortcut icon" href="/hexo-theme-huxblog/img/favicon.ico">
+
+    <title>
+        
+          React-review - Hitchcock717的博客 | Hitchcock717&#39;s Blog
+        
+    </title>
+
+    <link rel="canonical" href="http://kaijun.rocks/hexo-theme-huxblog/hexo-theme-huxblog/2019/05/22/React-review/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/hexo-theme-huxblog/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/hexo-theme-huxblog/css/hux-blog.min.css">
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/hexo-theme-huxblog/css/highlight.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/hexo-theme-huxblog/">Hitchcock717&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/hexo-theme-huxblog/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/hexo-theme-huxblog/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/hexo-theme-huxblog/archives/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/hexo-theme-huxblog/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://kaijun.rocks/hexo-theme-huxblog/hexo-theme-huxblog/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/hexo-theme-huxblog/img/home-bg.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/hexo-theme-huxblog/tags/#Note" title="Note">Note</a>
+                        
+                          <a class="tag" href="/hexo-theme-huxblog/tags/#React" title="React">React</a>
+                        
+                    </div>
+                    <h1>React-review</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by Hitchcock_disciple on
+                        2019-05-22
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p><a href="https://www.runoob.com/react/react-install.html" target="_blank" rel="noopener">具体参见菜鸟教程</a></p>
+<h4 id="腾讯云开发者平台-node-js环境-create-react-app脚手架"><a href="#腾讯云开发者平台-node-js环境-create-react-app脚手架" class="headerlink" title="腾讯云开发者平台+node.js环境+create-react-app脚手架"></a>腾讯云开发者平台+node.js环境+create-react-app脚手架</h4><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">安装脚手架指令：sudo yarn <span class="built_in">global</span> <span class="built_in">add</span> <span class="built_in">create</span>-react-app</span><br></pre></td></tr></table></figure>
+<p>关于yarn</p>
+<blockquote>
+<p>package dependence -从 npm 注册源获取模块的新的 CLI【command-line-interface】 客户端</p>
+</blockquote>
+<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">创建<span class="string">app指</span>令：<span class="built_in">create-react-app</span> <span class="string">app</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">创建访问链接 <span class="built_in">cd</span> app / yarn <span class="built_in">start</span> ——&gt; localhost+:本地端口<span class="number">3000</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>###<em>React元素渲染</em></p>
+<p><strong>将元素渲染进DOM(Document Object Model)文档对象模型</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello React!<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>     #首先定义根结点</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/babel"</span>&gt;</span>   #react第二代jsx语法解析编译器--babel</span><br><span class="line"><span class="handlebars"><span class="xml">const element =<span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>;  #const表示常量，常量值不能通过重新赋值改变，不能重新声明 / 语法：const name1 = value1[, name2=value2 [, ..[, nameN=valueN]]]; / 此处标明元素是"Hello,world!"一级标题</span></span></span><br><span class="line">ReactDOM.render( 						  #render()渲染方法，对一级标题渲染</span><br><span class="line"><span class="handlebars"><span class="xml">    element,									#对应const中的元素 / 此处element可替换为<span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span></span><br><span class="line">    document.getElementById('example') #返回匹配特定id的元素</span><br><span class="line">);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>更新元素渲染</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>   </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/babel"</span>&gt;</span></span><br><span class="line"><span class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">tick</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">  <span class="keyword">const</span> element = (</span></span><br><span class="line"><span class="handlebars"><span class="xml">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>      #react中元素不可变</span></span></span><br><span class="line"><span class="javascript">      &lt;h2&gt;现在是 &#123;<span class="keyword">new</span> <span class="built_in">Date</span>().toLocaleTimeString()&#125;.&lt;<span class="regexp">/h2&gt;     #更新界面的唯一方法--创建新元素/</span> 此处创建计时器</span></span><br><span class="line"><span class="handlebars"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line">  );</span><br><span class="line">  ReactDOM.render(</span><br><span class="line">    element,</span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.getElementById(<span class="string">'example'</span>)</span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">setInterval(tick, 1000);    #setInterval()方法，每秒调用一次render()方法</span><br></pre></td></tr></table></figure>
+<p><strong>封装function tick( )</strong></p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">等效方法一、</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/babel"</span>&gt;</span></span></span><br><span class="line"><span class="xml">function Clock(props) </span><span class="xquery">&#123;        #接受任意入参（props）</span></span><br><span class="line"><span class="xquery">  <span class="keyword">return</span> (</span></span><br><span class="line"><span class="xquery">    <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="xquery">      <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span></span><br><span class="line"><span class="xquery">      <span class="xml"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>现在是 </span><span class="xquery">&#123;props.date.toLocaleTimeString()&#125;</span></span><span class="xml">.<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> tick() &#123;</span><br><span class="line">  ReactDOM.render(</span><br><span class="line">    &lt;Clock date=&#123;new Date()&#125; /&gt;,</span><br><span class="line">   <span class="built_in"> document</span>.getElementById(<span class="string">'example'</span>)</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">setInterval(tick, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">==================================================</span><br><span class="line">等效方法二、</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/babel"</span>&gt;</span></span></span><br><span class="line"><span class="xml">class Clock extends React.Component </span><span class="xquery">&#123;    #使用ES6类</span></span><br><span class="line"><span class="xquery">  render() &#123;</span></span><br><span class="line"><span class="xquery">    <span class="keyword">return</span> (</span></span><br><span class="line"><span class="xquery">      <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="xquery">        <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span></span><br><span class="line"><span class="xquery">        <span class="xml"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>现在是 </span><span class="xquery">&#123;this.props.date.toLocaleTimeString()&#125;</span></span><span class="xml">.<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> tick() &#123;</span><br><span class="line">  ReactDOM.render(</span><br><span class="line">    &lt;Clock date=&#123;new Date()&#125; /&gt;,</span><br><span class="line">   <span class="built_in"> document</span>.getElementById(<span class="string">'example'</span>)</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">setInterval(tick, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+<h6 id="gt-关于函数组件-参见react官方文档"><a href="#gt-关于函数组件-参见react官方文档" class="headerlink" title="&gt; 关于函数组件 参见react官方文档"></a>&gt; 关于函数组件 参见<a href="https://react.docschina.org/docs/components-and-props.html" target="_blank" rel="noopener">react官方文档</a></h6><blockquote>
+<p>如下可称为<strong>函数组件</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="function"><span class="keyword">function</span> <span class="title">Welcome</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">&gt;  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, &#123;props.name&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&gt;&#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>或</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="class"><span class="keyword">class</span> <span class="title">Welcome</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">&gt;  render() &#123;</span><br><span class="line">&gt;    <span class="keyword">return</span> &lt;h1&gt;<span class="type">Hello</span>, &#123;<span class="keyword">this</span>.props.name&#125;&lt;/h1&gt;;</span><br><span class="line">&gt;  &#125;</span><br><span class="line">&gt;&#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p><em>渲染组件</em></p>
+<p>React元素不仅包括DOM标签，还有用户自定义组件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="keyword">function</span> Welcome(props) &#123;</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">  <span class="built_in">return</span> &lt;h1&gt;Hello, &#123;props.name&#125;&lt;/h1&gt;;</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&#125;</span></span><br><span class="line"><span class="meta">&gt;</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">const element = &lt;Welcome name=<span class="string">"Sara"</span> /&gt;; <span class="comment">#自定义Welcome name元素，注意与方法名一致【大写】</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">ReactDOM.render(</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">  element,</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">  document.getElementById(<span class="string">'root'</span>)</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">);</span></span><br><span class="line"><span class="meta">&gt;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>让我们来回顾一下这个例子中发生了什么：</p>
+<ol>
+<li>我们调用 <code>ReactDOM.render()</code> 函数，并传入 <code>&lt;Welcome name=&quot;Sara&quot; /&gt;</code> 作为参数。</li>
+<li>React 调用 <code>Welcome</code> 组件，并将 <code>{name: &#39;Sara&#39;}</code> 作为 props 传入。</li>
+<li><code>Welcome</code> 组件将 <code>&lt;h1&gt;Hello, Sara&lt;/h1&gt;</code> 元素作为返回值。</li>
+<li>React DOM 将 DOM 高效地更新为 <code>&lt;h1&gt;Hello, Sara&lt;/h1&gt;</code>。</li>
+</ol>
+</blockquote>
+<p>​        <em>复合组件</em></p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title">Name</span>(props) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="type">&lt;h1&gt;网站名称：&#123;props.name&#125;&lt;/h1&gt;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title">Url</span>(props) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="type">&lt;h1&gt;网站地址：&#123;props.url&#125;&lt;/h1&gt;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title">Nickname</span>(props) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="type">&lt;h1&gt;网站小名：&#123;props.nickname&#125;&lt;/h1&gt;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title">App</span>() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="type">(</span></span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;Name name=<span class="string">"菜鸟教程"</span> /&gt;</span><br><span class="line">        &lt;Url url=<span class="string">"http://www.runoob.com"</span> /&gt;</span><br><span class="line">        &lt;Nickname nickname=<span class="string">"Runoob"</span> /&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">ReactDOM.render(</span><br><span class="line">     &lt;App /&gt;,       #渲染整个组件</span><br><span class="line">    document.getElementById(<span class="symbol">'example</span>')</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>###<em>React JSX</em></p>
+<blockquote>
+<p>元素是构成 React 应用的最小单位，JSX 就是用来声明 React 当中的元素</p>
+</blockquote>
+<p><strong>不能使用if else语句</strong>——&gt;<strong>三元运算</strong></p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/babel"</span>&gt;</span></span></span><br><span class="line"><span class="xml">	  var i = 1;</span></span><br><span class="line"><span class="xml">      ReactDOM.render(</span></span><br><span class="line"><span class="xml">      	</span><span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">      	  </span><span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><span class="xquery">&#123;i == <span class="number">1</span> ? <span class="string">'True!'</span> : <span class="string">'False'</span>&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><span class="xml"> #相当于 if i == 1, return true; else: return false;</span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">      	,</span></span><br><span class="line"><span class="xml">      	document.getElementById('example')</span></span><br><span class="line"><span class="xml">      );</span></span><br></pre></td></tr></table></figure>
+<p>######&gt;关于三元运算</p>
+<blockquote>
+<p>语法：condition？expr1 ： expr2</p>
+</blockquote>
+<p><strong>内联样式</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myStyle = &#123;</span><br><span class="line">    fontSize: <span class="number">100</span>,</span><br><span class="line">    color: <span class="string">'#FF0000'</span></span><br><span class="line">&#125;;</span><br><span class="line">ReactDOM.render(</span><br><span class="line">    &lt;h1 style = &#123;myStyle&#125;&gt;菜鸟教程&lt;<span class="regexp">/h1&gt;,</span></span><br><span class="line"><span class="regexp">    document.getElementById('example')</span></span><br><span class="line"><span class="regexp">);</span></span><br></pre></td></tr></table></figure>
+<p><strong>注释</strong> {/<em>      </em>/}</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">ReactDOM.render(</span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>菜鸟教程<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="xml">    </span><span class="template-tag">&#123;/*注释<span class="name">...</span>*/&#125;</span></span><br><span class="line"><span class="xml">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span>,</span></span><br><span class="line"><span class="xml">    document.getElementById('example')</span></span><br><span class="line"><span class="xml">);</span></span><br></pre></td></tr></table></figure>
+<p>###<em>React State</em>  参见<a href="[http://huziketang.mangojuice.top/books/react/lesson10](http://huziketang.mangojuice.top/books/react/lesson10">胡子大哈blog</a>)</p>
+<p>最直观的理解</p>
+<p><img src="https://huzidaha.github.io/static/assets/img/posts/B7575C67-64F8-4A13-9C63-4D6805FA360D.png" alt="image_state"></p>
+<p>以点赞按钮为例</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; from <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> ReactDOM from <span class="string">'react-dom'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'./index.css'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LikeButton</span> <span class="title">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span> () &#123;      </span><br><span class="line">    <span class="keyword">super</span>()</span><br><span class="line">    <span class="keyword">this</span>.state = &#123; isLiked: <span class="literal">false</span> &#125;  #<span class="keyword">this</span>指向likebutton类</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleClickOnLikeButton () &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      isLiked: !<span class="keyword">this</span>.state.isLiked</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render () &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;button onClick=&#123;<span class="keyword">this</span>.handleClickOnLikeButton.bind(<span class="keyword">this</span>)&#125;&gt;</span><br><span class="line">        &#123;<span class="keyword">this</span>.state.isLiked ? <span class="string">'取消'</span> : <span class="string">'点赞'</span>&#125; 👍</span><br><span class="line">      &lt;/button&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>######&gt;关于constructor与super的作用    参见<a href="https://juejin.im/post/5b4c0b26f265da0f6c7a82a1" target="_blank" rel="noopener">掘金戴宏兵的文章</a></p>
+<p><code>constructor</code> 方法是类的构造函数，是一个默认方法</p>
+<p><code>super</code> 这个关键字，既可以当做函数使用，也可以当做对象使用。这两种情况下，它的用法完全不用</p>
+<p>​    当做函数使用</p>
+<blockquote>
+<p><strong>class</strong> <strong>A</strong> {}<br><strong>class</strong> <strong>B</strong> <strong>extends</strong> <strong>A</strong> {<br><strong>constructor</strong>() {<br><strong>super</strong>();  // ES6 要求，子类的构造函数必须执行一次 super 函数，否则会报错。<br>}<br>}</p>
+<p>注：在 <code>constructor</code> 中必须调用 <code>super</code> 方法，因为子类没有自己的 <code>this</code> 对象，而是继承父类的 <code>this</code> 对象，然后对其进行加工,而 <code>super</code> 就代表了父类的构造函数。<code>super</code> 虽然代表了父类 A 的构造函数，但是返回的是子类 B 的实例，即 <code>super</code> 内部的 <code>this</code> 指的是 B，因此 <code>super()</code> 在这里相当于 <figure class="highlight plain"><figcaption><span>props)``。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">​	当做对象使用</span><br><span class="line"></span><br><span class="line">**在普通方法中，指向父类的原型对象；在静态方法中，指向父类**</span><br><span class="line"></span><br><span class="line">&gt;class A &#123;</span><br><span class="line">&gt;  c() &#123;</span><br><span class="line">&gt;    return 2;</span><br><span class="line">&gt;  &#125;</span><br><span class="line">&gt;&#125;</span><br><span class="line">&gt;</span><br><span class="line">&gt;class B extends A &#123;</span><br><span class="line">&gt;  constructor() &#123;</span><br><span class="line">&gt;    super();</span><br><span class="line">&gt;    console.log(super.c()); // 2</span><br><span class="line">&gt;  &#125;</span><br><span class="line">&gt;&#125;</span><br><span class="line">&gt;</span><br><span class="line">&gt;let b = new B();</span><br><span class="line">&gt;</span><br><span class="line">&gt;注：上面代码中，子类 B 当中的 `super.c()`，就是将 `super` 当作一个对象使用。这时，`super` 在普通方法之中，指向 `A.prototype`，所以 `super.c()` 就相当于 `A.prototype.c()`。</span><br><span class="line"></span><br><span class="line">**通过 super 调用父类的方法时，super 会绑定子类的 this**</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>class A {<br>  constructor {<br>    this.x = 1;<br>  }<br>  s() {<br>    console.log(this.x);<br>  }<br>}</p>
+<p>class B extends A {<br>  constructor {<br>    super();<br>    this.x = 2;<br>  }<br>  m() {<br>    super.s();<br>  }<br>}</p>
+<p>let b = new B();<br>b.m(); // 2</p>
+<p>#上面代码中，super.s() 虽然调用的是 A.prototytpe.s()，但是 A.prototytpe.s()会绑定子类 B 的 this，导致输出的是 2，而不是 1。也就是说，实际上执行的是 super.s.call(this)。<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">######&gt;继续state点赞👍案例</span><br><span class="line"></span><br><span class="line">`isLiked` 存放在实例的 `state` 对象当中，这个对象在构造函数里面初始化。这个组件的 `render` 函数内，会根据组件的 `state` 的中的`isLiked`不同显示“取消”或“点赞”内容。并且给 `button` 加上了点击的事件监听。</span><br><span class="line"></span><br><span class="line">最后构建一个 `Index` ，在它的 `render` 函数内使用 `LikeButton` 。然后把 `Index`渲染到页面上：</span><br></pre></td></tr></table></figure></p>
+<p>class Index extends Component {<br>  render () {<br>    return (<br>      <div><br>        <likebutton><br>      </likebutton></div><br>    )<br>  }<br>}</p>
+<p>ReactDOM.render(<br>  <index>,<br>  document.getElementById(‘root’)<br>)<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### *React Props*</span><br><span class="line"></span><br><span class="line">&gt;state根据交互可变，用来更新和修改数据/props不可变，用来传递数据</span><br></pre></td></tr></table></figure></index></p>
+<p><div id="example"></div></p>
+<p><script type="text/babel"><br>function HelloMessage(props) {<br>    return <h1>Hello {props.name}!</h1>;<br>}</p>
+<p>const element = <HelloMessage name="Runoob"/>; #自定义组件</p>
+<p>ReactDOM.render(<br>    element,<br>    document.getElementById(‘example’)<br>);<br><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**<span class="keyword">state</span>与props组合使用**</span><br><span class="line"></span><br><span class="line">&gt; 在父组件中设置 <span class="keyword">state</span>， 并通过在子组件上使用 props 将其传递到子组件上。在 render 函数中, 我们设置 name 和 site 来获取父组件传递过来的数据。</span><br></pre></td></tr></table></figure></p>
+<p>class WebSite extends React.Component {<br>  constructor() {<br>      super();</p>
+<pre><code>  this.state = {
+    name: &quot;菜鸟教程&quot;,
+    site: &quot;https://www.runoob.com&quot;
+  }
+}
+</code></pre><p>  render() {<br>    return (<br>      <div><br>        <Name name={this.state.name} /><br>        <Link site={this.state.site} /><br>      </div><br>    );<br>  }<br>}</p>
+<p>class Name extends React.Component {<br>  render() {<br>    return (<br>      <h1>{this.props.name}</h1><br>    );<br>  }<br>}</p>
+<p>class Link extends React.Component {<br>  render() {<br>    return (<br>      <a href={this.props.site}><br>        {this.props.site}<br>      </a><br>    );<br>  }<br>}</p>
+<p>ReactDOM.render(<br>  <WebSite />,<br>  document.getElementById(‘example’)<br>);<br><code>`</code></p>
+</script></p>
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/hexo-theme-huxblog/2019/05/22/cjy-philosophy/" data-toggle="tooltip" data-placement="top" title="cjy-philosophy">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/hexo-theme-huxblog/2019/05/22/reStructureText-review/" data-toggle="tooltip" data-placement="top" title="reStructureText-review">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+                <!-- disqus 评论框 start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus 评论框 end -->
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/hexo-theme-huxblog/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/hexo-theme-huxblog/tags/#Note" title="Note">Note</a>
+                        
+                          <a class="tag" href="/hexo-theme-huxblog/tags/#React" title="React">React</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://blog.kaijun.rocks" target="_blank">Kaijun&#39;s Blog</a></li>
+                    
+                        <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
+                    
+                        <li><a href="#" target="_blank">Foo</a></li>
+                    
+                        <li><a href="#" target="_blank">Bar</a></li>
+                    
+                        <li><a href="#" target="_blank">Example Friends</a></li>
+                    
+                        <li><a href="#" target="_blank">It helps SEO</a></li>
+                    
+                </ul>
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "hexo-theme-huxblog";
+    var disqus_identifier = "http://kaijun.rocks/hexo-theme-huxblog/2019/05/22/React-review/";
+    var disqus_url = "http://kaijun.rocks/hexo-theme-huxblog/2019/05/22/React-review/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/Demonbane_x">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/Demonbane">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/Demonbane">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/demonbane.cn">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Kaijun">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://www.linkedin.com/in/kaijun-chen-42089354">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Hitchcock717&#39;s Blog 2020 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a href="http://blog.kaijun.rocks">Kaijun</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/hexo-theme-huxblog/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/hexo-theme-huxblog/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/hexo-theme-huxblog/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://kaijun.rocks/hexo-theme-huxblog/hexo-theme-huxblog/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-49627206-1';
+    var _gaDomain = 'huangxuan.me';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '4cc1f2d8f3067386cc5cdb626a202900';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="http://kaijun.rocks/hexo-theme-huxblog/hexo-theme-huxblog/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

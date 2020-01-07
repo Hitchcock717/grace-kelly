@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A pursuit of sundogs">
+    <meta name="keyword" content="psychiatrist">
+    <link rel="shortcut icon" href="/hexo-theme-huxblog/img/favicon.ico">
+
+    <title>
+        
+          Data-Type Conversion - Hitchcock717的博客 | Hitchcock717&#39;s Blog
+        
+    </title>
+
+    <link rel="canonical" href="http://kaijun.rocks/hexo-theme-huxblog/hexo-theme-huxblog/2019/11/25/Data-Type Conversion/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/hexo-theme-huxblog/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/hexo-theme-huxblog/css/hux-blog.min.css">
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/hexo-theme-huxblog/css/highlight.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/hexo-theme-huxblog/">Hitchcock717&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/hexo-theme-huxblog/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/hexo-theme-huxblog/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/hexo-theme-huxblog/archives/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/hexo-theme-huxblog/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://kaijun.rocks/hexo-theme-huxblog/hexo-theme-huxblog/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/hexo-theme-huxblog/img/home-bg.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/hexo-theme-huxblog/tags/#Markdown" title="Markdown">Markdown</a>
+                        
+                          <a class="tag" href="/hexo-theme-huxblog/tags/#Python3" title="Python3">Python3</a>
+                        
+                    </div>
+                    <h1>Data-Type Conversion</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by Hitchcock_disciple on
+                        2019-11-25
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p><a href="https://shockerli.net/post/python3-data-type-convert/" target="_blank" rel="noopener">参考自格物blog</a></p>
+<h2 id="INT"><a href="#INT" class="headerlink" title="INT()"></a>INT()</h2><p>Three types are allowed to convert to int</p>
+<ol>
+<li>float: int(-14.2) = -14</li>
+<li>str: int(‘1209’) = 1209; int(‘-15’) = -15</li>
+<li>bytes: int(b’1232’) = 1232</li>
+</ol>
+<h2 id="FLOAT"><a href="#FLOAT" class="headerlink" title="FLOAT()"></a>FLOAT()</h2><p>Three types are allowed to convert to float</p>
+<ol>
+<li>int: float(-1324) = -1324.0</li>
+<li>str: conversion is not allowed if ‘+’, ‘-‘, [0-9], ‘.’ are not included<br>float(‘-1209’) = -1209.0; float(‘-0120.324’) = -120.324</li>
+<li>bytes: conversion is not allowed if ‘+’, ‘-‘, [0-9], ‘.’ are not included<br>float(b’-1233’) = -1233.0; float(b’-01233.234’) = -1233.234</li>
+</ol>
+<h2 id="COMPLEX"><a href="#COMPLEX" class="headerlink" title="COMPLEX()"></a>COMPLEX()</h2><p>Three types are allowed to convert to complex</p>
+<ol>
+<li>int: automatically add ‘0j’ to imaginary number<br>complex(12) = (12+0j)</li>
+<li>float: automatically add ‘0j’ to imaginary number<br>complex(-12.99) = (-12.99+0j)</li>
+<li>str: when str is being converted to complex, if the conversion type is int or float, the type of complex will be converted later; if totally suits the rule of complex expression, the conversion will be made instantly.<br>complex(‘-12.12’) = (-12.12+0j);<br>complex(‘12.0’) = (-12+0j) # cut the decimal<br>complex(‘-13’) = (-13+0j);<br>complex(‘-13+8j’) = (-13+8j);<br>complex(b’12’) = callback(Type ‘bytes’ is not allowed);<br>complex(‘12 + 9j’) = callback(No whitespace is near ‘+’)</li>
+</ol>
+<h2 id="STR"><a href="#STR" class="headerlink" title="STR()"></a>STR()</h2><p>Every type could be converted to str</p>
+<ol>
+<li>int: str(12) = 12</li>
+<li>float: str(-14.30) = -14.3</li>
+<li>complex: when complex is being converted to str, the type of complex will be converted to standard complex expression and then to str.<br>str(complex(12 + 9j)) = (12+9j)<br>str(complex(12,9)) = (12+9j)</li>
+<li>bytes: str(b’hello world) = b’hello world’;<br>b’hello world’.decode = hello world;<br>str(b’hello world’, encoding=’utf-8’) = hello world;<br>str(b’\xe4\xb8\xad\xe5\x9b\xbd’, encoding=’utf-8’) = 中国</li>
+</ol>
+<h3 id="STR-LIST"><a href="#STR-LIST" class="headerlink" title="STR-LIST()"></a>STR-LIST()</h3><p>str: the result will be initially converted to standard ‘list expression’ and then to str</p>
+<ol>
+<li>str([]) = [];</li>
+<li>str([1,2,3]) = [1,2,3]</li>
+<li>‘’.join([‘a’,’b’,’c’]) = abc</li>
+</ol>
+<h3 id="STR-TUPLE"><a href="#STR-TUPLE" class="headerlink" title="STR-TUPLE()"></a>STR-TUPLE()</h3><p>str: the result will be initially converted to standard ‘tuple expression’ and then to str</p>
+<ol>
+<li>str(()) = ()</li>
+<li>str((1,2,3)) = (1,2,3)</li>
+<li>‘’.join((‘a’,’b’,’c’)) = abc</li>
+</ol>
+<h3 id="STR-DICT"><a href="#STR-DICT" class="headerlink" title="STR-DICT()"></a>STR-DICT()</h3><p>str: the result will be initially converted to standard ‘dict expression’ and then to str</p>
+<ol>
+<li>str({‘name’:’hello’,’age’:18}) = {‘name’:’hello”, ‘age’: 18}</li>
+<li>str({}) = {}</li>
+<li>‘’.join({‘name’: ‘hello’, ‘age’: 18}) = nameage</li>
+</ol>
+<h3 id="STR-SET"><a href="#STR-SET" class="headerlink" title="STR-SET()"></a>STR-SET()</h3><p>the result will be initially converted to standard ‘set expression’ and then to str</p>
+<ol>
+<li>str(set({})) = set()</li>
+<li>str({1,2,3}) = {1,2,3}</li>
+<li>‘’.join({‘a’, ‘b’, ‘c’}) = abc</li>
+</ol>
+<h2 id="BTYES"><a href="#BTYES" class="headerlink" title="BTYES()"></a>BTYES()</h2><p>only support str<br>‘中国’.encode() = b’\xe4\xb4\xad\x32\x9b\xbd’<br>bytes(‘中国’, encoding=’utf-8’) = #b’\xe4\x6b\xad\xe6\x96\xbd’</p>
+<h2 id="LIST"><a href="#LIST" class="headerlink" title="LIST()"></a>LIST()</h2><p>only support sequence, such as str, tuple, dict, set</p>
+<ol>
+<li>str: list(‘1213ac’) = [‘1’,’2’,’1’,’3’,’a’,’c’]</li>
+<li>bytes: choose each bytes’ ASCII decimal system value<br> list(b’hello’) = [104, 101, 108, 108, 111]</li>
+<li>tuple: just list((1,2,3)) = [1,2,3]</li>
+<li>dict: choose key-name as list-value<br>list({‘name’:’hello’, ‘age’: 18}) = [‘name’, ‘age’]</li>
+<li>set: drop duplication, and then convert<br>list({1,2,3,3,2,1}) = [1,2,3]</li>
+</ol>
+<h2 id="TUPLE"><a href="#TUPLE" class="headerlink" title="TUPLE()"></a>TUPLE()</h2><p>Same as list, only support sequence</p>
+<ol>
+<li>str: tuple(‘中国人’) = （’中’, ‘国’, ‘人’)</li>
+<li>bytes: tuple(b’hello’) = (104, 101, 108, 108, 111)</li>
+<li>list: tuple([1,2,3]) = (1,2,3)</li>
+<li>dict: tuple({‘name’:’hello’, ‘age’: 18}) = (‘name’, ‘age’)</li>
+<li>set: tuple({1,2,3,3,2,1}) = (1,2,3)</li>
+</ol>
+<h2 id="DICT"><a href="#DICT" class="headerlink" title="DICT()"></a>DICT()</h2><ol>
+<li><p>str:<br> 1.1 import json<br>‘’’<br> import json<br> user_info = ‘{‘name’:’john’, ‘gender’:’male’}’<br> print(json.loads(user_info))</p>
+<h1 id="‘name’-’john’-‘gender’-’male’"><a href="#‘name’-’john’-‘gender’-’male’" class="headerlink" title="{‘name’:’john’, ‘gender’:’male’}"></a>{‘name’:’john’, ‘gender’:’male’}</h1><p> 1.2 import eval # not recommended for serious safety problems<br> 1.3 import ast.literal_eval<br>‘’’<br> import ast<br> user_info = ‘{‘name’:’john’, ‘gender’:’male’}’<br> user_dict = ast.literal_eval(user_info)<br> print(user_dict)</p>
+<h1 id="‘name’-’john’-‘gender’-’male’-1"><a href="#‘name’-’john’-‘gender’-’male’-1" class="headerlink" title="{‘name’:’john’, ‘gender’:’male’}"></a>{‘name’:’john’, ‘gender’:’male’}</h1></li>
+<li><p>list:<br> 2.1 use zip to map two lists into a dict<br>‘’’<br> list1 = [1,2,3,4]<br> list2 = [1,2,3]<br> print(dict(zip(list1,list2)))</p>
+<h1 id="1-1-2-2-3-3"><a href="#1-1-2-2-3-3" class="headerlink" title="{1:1, 2:2, 3:3}"></a>{1:1, 2:2, 3:3}</h1><p> 2.2 convert nesting list into dict<br>‘’’<br> li = [<br> [1, 111],<br> [2, 222],<br> [3, 333],<br> ]<br> print(dict(li))</p>
+<h1 id="1-111-2-222-3-333"><a href="#1-111-2-222-3-333" class="headerlink" title="{1: 111, 2: 222, 3: 333}"></a>{1: 111, 2: 222, 3: 333}</h1></li>
+<li><p>tuple:<br> similar with list<br> 3.1 use zip to map two tuples into a dict<br>‘’’<br> tup1 = (1,2,3,4)<br> tup2 = (1,2,3)<br> print(dict(zip(list1,list2)))</p>
+<h1 id="1-1-2-2-3-3-1"><a href="#1-1-2-2-3-3-1" class="headerlink" title="{1:1, 2:2, 3:3}"></a>{1:1, 2:2, 3:3}</h1><p> 2.2 convert nesting tuple into dict<br>‘’’<br> tp = ()<br> (1, 111),<br> (2, 222),<br> (3, 333),<br> )<br> print(dict(tp))</p>
+<h1 id="1-111-2-222-3-333-1"><a href="#1-111-2-222-3-333-1" class="headerlink" title="{1: 111, 2: 222, 3: 333}"></a>{1: 111, 2: 222, 3: 333}</h1></li>
+<li>set:<br>‘’’<br> set1 = {1,2,3}<br> set2 = {‘a’,’b’,’c’}<br> print(dict(zip(set1,set2)))<h1 id="1-’c’-2-’a’-3-’b’"><a href="#1-’c’-2-’a’-3-’b’" class="headerlink" title="{1:’c’, 2:’a’, 3:’b’}"></a>{1:’c’, 2:’a’, 3:’b’}</h1></li>
+</ol>
+<h2 id="SET"><a href="#SET" class="headerlink" title="SET()"></a>SET()</h2><ol>
+<li>str: cut str into tuple and then drop duplications into a set<br>print(set(‘hello’))<br>#{‘l’,’o’,’e’,’h’}</li>
+<li>bytes: set(b’hello’) = {104, 108, 101, 111}</li>
+<li>list: drop duplications in list first, and then convert<br>set([1,2,3,2,1]) = {1,2,3}</li>
+<li>tuple: drop duplications in list first, and then convert<br> set((1,2,3,2,1)) = {1,2,3}</li>
+<li>dict: choose dict{key-name} to group them<br> set({‘name’:’hello’, ‘age’:18})</li>
+</ol>
+<h2 id="OTHER-TYPES"><a href="#OTHER-TYPES" class="headerlink" title="OTHER-TYPES"></a>OTHER-TYPES</h2><p>Convert embedded object:</p>
+<blockquote>
+<ol>
+<li>str(int)<ol start="2">
+<li>str(hex)<br>Convert class instance:<br>‘’’<br>class Hello:<br>  pass<br>obj = Hello()<br>print(str(obj))</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<pre><code># &lt;__main__.Hello object at 0x1071c6635&gt;
+</code></pre><p>Conver function:<br>‘’’<br>    def hello():<br>        pass<br>    print(str(hello))</p>
+<pre><code># &lt;function hello at 0x103d3a023&gt;
+</code></pre>
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/hexo-theme-huxblog/2019/11/26/IMAPOST/" data-toggle="tooltip" data-placement="top" title="IMAPOST">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/hexo-theme-huxblog/2019/11/22/BitCoin/" data-toggle="tooltip" data-placement="top" title="BitCoin">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+                <!-- disqus 评论框 start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus 评论框 end -->
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/hexo-theme-huxblog/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/hexo-theme-huxblog/tags/#Markdown" title="Markdown">Markdown</a>
+                        
+                          <a class="tag" href="/hexo-theme-huxblog/tags/#Python3" title="Python3">Python3</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://blog.kaijun.rocks" target="_blank">Kaijun&#39;s Blog</a></li>
+                    
+                        <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
+                    
+                        <li><a href="#" target="_blank">Foo</a></li>
+                    
+                        <li><a href="#" target="_blank">Bar</a></li>
+                    
+                        <li><a href="#" target="_blank">Example Friends</a></li>
+                    
+                        <li><a href="#" target="_blank">It helps SEO</a></li>
+                    
+                </ul>
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "hexo-theme-huxblog";
+    var disqus_identifier = "http://kaijun.rocks/hexo-theme-huxblog/2019/11/25/Data-Type Conversion/";
+    var disqus_url = "http://kaijun.rocks/hexo-theme-huxblog/2019/11/25/Data-Type Conversion/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/Demonbane_x">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/Demonbane">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/Demonbane">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/demonbane.cn">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Kaijun">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://www.linkedin.com/in/kaijun-chen-42089354">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Hitchcock717&#39;s Blog 2020 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a href="http://blog.kaijun.rocks">Kaijun</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/hexo-theme-huxblog/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/hexo-theme-huxblog/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/hexo-theme-huxblog/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://kaijun.rocks/hexo-theme-huxblog/hexo-theme-huxblog/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-49627206-1';
+    var _gaDomain = 'huangxuan.me';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '4cc1f2d8f3067386cc5cdb626a202900';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="http://kaijun.rocks/hexo-theme-huxblog/hexo-theme-huxblog/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
